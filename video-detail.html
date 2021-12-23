@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Single Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-video mr-2"></i>
+                CyberCam
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <p style="font-size: 20px; color: #000;">Welcome User</p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" aria-current="page" href="user_index.html"><i class="fas fa-video mr-2"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-1" aria-current="page" href="about.html">My Plan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-4" href="login.html">LOG OUT <i class="fas fa-sign-out-alt"></i></a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="tm-hero d-flex justify-content-center align-items-center" data-parallax="scroll" data-image-src="img/hero.jpg">
+        <form class="d-flex tm-search-form">
+            <input class="form-control tm-search-input" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success tm-search-btn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div> -->
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row mb-4" style="margin: 0 0px 0 30px;">
+            <h2 id="CamName" class="col-12 tm-text-primary"></h2>
+        </div>
+                   
+            <!-- <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12"> -->
+                <!-- <img src="img/img-01-big.jpg" alt="Image" class="img-fluid"> -->
+                <video autoplay muted loop controls id="tm-video" style="padding: 0 70px 0 70px; margin: 30px 0 30px 0;">
+                    <source src="video/hero.mp4" type="video/mp4" id="videoId">
+                </video>
+            </div>
+            
+        </div>
+        
+
+        <footer class="tm-bg-gray pt-5 pb-3 tm-text-gray tm-footer">
+            <div class="container-fluid tm-container-small">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 px-5 mb-5">
+                        <h3 class="tm-text-primary mb-4 tm-footer-title">About CyberCam</h3>
+                        <p>CyberCam is a website built for the Cameras <a rel="sponsored" href="contact.html"><bold> Contact Us</bold></a> for more information.</p>
+                    </div>
+                    
+            </div>
+        </footer>
+    
+    <script src="js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+
+        const videoName = localStorage.getItem('video')
+        const camName = localStorage.getItem('cam')
+        const videoSource = document.getElementById('videoId')
+        console.log(videoSource,camName)
+        videoSource.setAttribute('src',videoName)
+        document.getElementById('tm-video').load()
+        document.getElementById('CamName').textContent = camName
+        console.log('VIDEO NAME',videoName)
+    </script>
+</body>
+</html>
